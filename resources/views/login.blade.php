@@ -13,7 +13,7 @@
             <div class="log-in-box">
               <div class="log-in-title">
                 <h3>Selamat Datang</h3>
-                <h4>Log In Dengan Akun Kamu</h4>
+                <h4>Log In Dengan Akun Kamu!!</h4>
               </div>
 
               <div class="input-box">
