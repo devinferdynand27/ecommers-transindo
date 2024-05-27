@@ -1,17 +1,30 @@
 @extends('layouts.custumer')
 @section('content')
-    @php
-        use App\Models\Kategori;
-        use App\Models\Banner;
-        use App\Models\Produk;
-        $produk = Produk::orderBy('created_at', 'asc')->get();
-        $kategori = Kategori::orderBy('created_at', 'asc')->get();
-        $banner = Banner::orderBy('created_at', 'asc')->get();
-    @endphp
-
     <section style="background: rgba(245, 245, 245, 0.268);">
         <div class="container">
-            <div class="title d-block">
+            <div class="row">
+                <div class="col-xxl-6 col-xl-8 mx-auto">
+                    <div class="title d-block text-center">
+                        <h2>Search  products</h2>
+                        <span class="title-leaf">
+                            <svg class="icon-width">
+                                <use xlink:href="../assets/svg/leaf.svg#leaf"></use>
+                            </svg>
+                        </span>
+                    </div>
+    
+                    <div class="search-box container">
+                        <form action="/search" method="post">
+                            @csrf
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="search" placeholder="Cari Produk / Lokasi" aria-label="Example text with button addon">
+                                <button class="btn theme-bg-color text-white m-0" type="submit" id="button-addon1">Search</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="title d-block mt-5">
                 <h2 class="text-theme font-sm">List Produk</h2>
                 <p>Silahkan Pilih Produk Produk Menarik Yang Anda Suka</p>
             </div>

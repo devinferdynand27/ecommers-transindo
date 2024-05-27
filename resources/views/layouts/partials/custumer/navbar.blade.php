@@ -16,27 +16,12 @@
             <div class="row">
                 <div class="col-12">
                     <div class="navbar-top">
-                        <button class="navbar-toggler d-xl-none d-inline navbar-menu-button" type="button"
-                            data-bs-toggle="offcanvas" data-bs-target="#primaryMenu">
-                            <span class="navbar-toggler-icon">
-                                <i class="fa-solid fa-bars"></i>
-                            </span>
-                        </button>
                         <a href="/" class="web-logo nav-logo">
                             <img src="{{ asset('custumer/assets/images/logo/1.png') }}"
                                 class="img-fluid blur-up lazyload" alt="">
                         </a>
 
                         <div class="middle-box">
-                            {{-- <div class="location-box">
-                                <button class="btn location-button" data-bs-toggle="modal" data-bs-target="#locationModal">
-                                    <span class="location-arrow">
-                                        <i data-feather="map-pin"></i>
-                                    </span>
-                                    <span class="locat-name">Your Location</span>
-                                    <i class="fa-solid fa-angle-down"></i>
-                                </button>
-                            </div> --}}
 
                             <div class="search-box">
                                 <div class="input-group">
@@ -74,19 +59,9 @@
                                         </div>
                                     </div>
                                 </li>
+                              
                                 <li class="right-side">
-                                    <a href="contact-us.html" class="delivery-login-box">
-                                        <div class="delivery-icon">
-                                            <i data-feather="phone-call"></i>
-                                        </div>
-                                        <div class="delivery-detail">
-                                            <h6>24/7 Delivery</h6>
-                                            <h5>+91 888 104 2340</h5>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="right-side">
-                                    <a href="wishlist.html" class="btn p-0 position-relative header-wishlist">
+                                    <a href="/wishlist" class="btn p-0 position-relative header-wishlist">
                                         <i data-feather="heart"></i>
                                     </a>
                                 </li>
@@ -94,7 +69,7 @@
                                     <div class="onhover-dropdown header-badge">
                                         <button type="button" class="btn p-0 position-relative header-wishlist">
                                             <i data-feather="shopping-cart"></i>
-                                            <span class="position-absolute top-0 start-100 translate-middle badge">2
+                                            <span class="position-absolute top-0 start-100 translate-middle badge">0
                                                 <span class="visually-hidden">unread messages</span>
                                             </span>
                                         </button>
@@ -129,10 +104,14 @@
                                             @endif
 
                                             @if (Auth::check())
+                                            
+                                                <li class="product-box-contain">
+                                                    <a href="/transaksi-list"> Transaksi</a>
+                                                </li>
                                                 <li class="product-box-contain">
                                                     <form action="/custumer/logout" method="post">
                                                         @csrf
-                                                        <button class="btn btn-danger btn-sm">Logout</button>
+                                                        <button class="btn btn-danger btn-sm text-white" style="background: red">Logout</button>
                                                     </form>
                                                 </li>
                                             @endif
@@ -159,31 +138,25 @@
             </a>
         </li>
 
-        <li class="mobile-category">
-            <a href="javascript:void(0)">
-                <i class="iconly-Category icli js-link"></i>
-                <span>Category</span>
-            </a>
-        </li>
 
         <li>
-            <a href="search.html" class="search-box">
+            <a href="/search" class="search-box">
                 <i class="iconly-Search icli"></i>
                 <span>Search</span>
             </a>
         </li>
 
         <li>
-            <a href="wishlist.html" class="notifi-wishlist">
+            <a href="/wishlist" class="notifi-wishlist">
                 <i class="iconly-Heart icli"></i>
-                <span>My Wish</span>
+                <span>Wishlist</span>
             </a>
         </li>
 
         <li>
-            <a href="cart.html">
+            <a href="/transaksi-list">
                 <i class="iconly-Bag-2 icli fly-cate"></i>
-                <span>Cart</span>
+                <span>Transaksi</span>
             </a>
         </li>
     </ul>

@@ -33,11 +33,20 @@ Route::get('/register/merchant', function () {
 Route::get('/register/custumer', function () {
     return view('register-custumer');
 });
+Route::get('/wishlist', function () {
+    return view('wishlist');
+});
+Route::get('/transaksi-list', function () {
+    return view('order-success');
+});
 Route::get('/order-success', function () {
     return view('order-success');
 });
 
 Route::post('search', [MemberController::class, 'search']);
+Route::get('/search', function () {
+    return view('search-get');
+});
 
 Route::get('/order-success/{sewa}', [TransaksiController::class, 'success'])->name('order-success');
 Route::get('/detail/produk/{slug}', [MemberController::class, 'detail_produk']);
